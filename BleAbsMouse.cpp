@@ -100,7 +100,7 @@ void BleAbsMouse::click(int16_t x, int16_t y)
 
 void BleAbsMouse::move(int16_t x, int16_t y)
 {
-	this->send(1, x, y);
+	this->send(3, x, y);
 }
 
 void BleAbsMouse::release()
