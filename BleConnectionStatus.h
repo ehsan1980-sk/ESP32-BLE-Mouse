@@ -14,7 +14,7 @@ public:
   bool connected = false;
   void onConnect(BLEServer* pServer);
   void onDisconnect(BLEServer* pServer);
-  BLECharacteristic* inputMouse;
+  BLECharacteristic* inputAbsMouse;
 };
 
 #endif // CONFIG_BT_ENABLED
