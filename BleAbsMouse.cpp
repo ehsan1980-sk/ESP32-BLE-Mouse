@@ -81,6 +81,7 @@ BleAbsMouse::BleAbsMouse(std::string deviceName, std::string deviceManufacturer,
   this->deviceManufacturer = deviceManufacturer;
   this->batteryLevel = batteryLevel;
   this->connectionStatus = new BleConnectionStatus();
+  this->isPressed = false;
 }
 
 void BleAbsMouse::begin(void)
@@ -101,11 +102,13 @@ void BleAbsMouse::click(int16_t x, int16_t y)
 void BleAbsMouse::move(int16_t x, int16_t y)
 {
 	this->send(3, x, y);
+	this->isPressed = true;
 }
 
 void BleAbsMouse::release()
 {
 	this->send(0, 0, 0);
+	this->isPressed = false;
 }
 
 void BleAbsMouse::send(int state, int16_t x, int16_t y)

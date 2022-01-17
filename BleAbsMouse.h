@@ -27,6 +27,7 @@ public:
   uint8_t batteryLevel;
   std::string deviceManufacturer;
   std::string deviceName;
+  bool isPressed;
 protected:
   virtual void onStarted(BLEServer *pServer) { };
 };
